@@ -20,6 +20,7 @@ from ._foxglove_py.websocket import (
     ParameterType,
     ParameterValue,
     PlaybackControlRequest,
+    PlaybackState,
     Service,
     ServiceRequest,
     ServiceSchema,
@@ -181,7 +182,9 @@ class ServerListener(Protocol):
         """
         return None
 
-    def on_playback_control_request(self, playback_control_request: PlaybackControlRequest) -> None:
+    def on_playback_control_request(
+        self, playback_control_request: PlaybackControlRequest
+    ) -> None:
         """
         Called by the server when it receives an updated player state from the client.
 
