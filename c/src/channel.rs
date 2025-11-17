@@ -286,7 +286,7 @@ unsafe fn do_foxglove_mcap_open(
 
         McapWriterVariant::Custom(writer)
     } else {
-        // Use file path (existing behavior)
+        // Use file path
         let path = unsafe { options.path.as_utf8_str() }
             .map_err(|e| foxglove::FoxgloveError::Utf8Error(format!("path is invalid: {e}")))?;
 
